@@ -12,3 +12,9 @@ resource "aws_instance" "db_ec2" {
     instance_type = "t2.micro"
     subnet_id = aws_subnet.prv_one.id
 }
+
+resource "aws_instance" "test_instance" {
+    ami = data.aws_ami.my_image.id
+    instance_type = "t3a.micro"
+    subnet_id = aws_subnet.prv_one.id
+}
