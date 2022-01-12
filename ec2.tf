@@ -15,7 +15,8 @@ resource "aws_instance" "db_ec2" {
 }
 
 resource "aws_instance" "test_instance" {
-    ami = data.aws_ami.my_image.id
-    instance_type = "t3a.micro"
-    subnet_id = aws_subnet.prv_one.id
+    ami            	   = data.aws_ami.my_image.id
+    instance_type          = "t3a.micro"
+    subnet_id              = aws_subnet.prv_one.id
+    vpc_security_group_ids = var.test_instance
 }
